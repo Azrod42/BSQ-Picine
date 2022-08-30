@@ -6,7 +6,7 @@
 /*   By: tsorabel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 23:00:39 by tsorabel          #+#    #+#             */
-/*   Updated: 2022/08/30 19:49:28 by lfantine         ###   ########.fr       */
+/*   Updated: 2022/08/30 20:15:18 by lfantine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ int	main(int argc, char **argv)
 	s_max_sqr posmax;
 	map = open_read_close(BUF_SIZE, argv);
 	if (check_global(map) == 1)
+	{
+		write(1, "map error", 9);
 		return (1);
+	}
 	/*if (check_empty == 1)
 		return(0);*/
 	posmax = ft_loop_sq(map);

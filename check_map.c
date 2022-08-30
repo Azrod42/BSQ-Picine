@@ -6,7 +6,7 @@
 /*   By: lfantine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 09:34:34 by lfantine          #+#    #+#             */
-/*   Updated: 2022/08/30 16:02:21 by lfantine         ###   ########.fr       */
+/*   Updated: 2022/08/30 20:18:42 by lfantine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	check_exist(char **map)
 	if(ft_strlen_bis(map) > 1)
 	{
 		if (map[1][0] != '\0' && (map[1][0] >= 32 && map[1][0] <= 126))
-				return (0);
+			return (0);
 	}
 	return (1);
 }
@@ -87,11 +87,11 @@ int	check_char(char **map, int idxl, int idxc)
 	char	obst;
 	char	full;
 
-	while (map[0][idxl] >= '0' && map[0][idxl] <= '9')
-		idxl++;
-	ept = map[0][idxl++];
-	obst  = map[0][idxl++];
-	full = map[0][idxl];
+	if (ft_strlen(map[0]) < 4)
+		return (1);
+	ept = map[0][ft_strlen(map[0]) - 3];
+	obst  = map[0][ft_strlen(map[0]) - 2];
+	full = map[0][ft_strlen(map[0]) - 1];
 	idxl = 0;
 	while (map[idxc])
 	{
