@@ -6,11 +6,11 @@
 /*   By: lfantine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 09:34:34 by lfantine          #+#    #+#             */
-/*   Updated: 2022/08/31 17:15:44 by lfantine         ###   ########.fr       */
+/*   Updated: 2022/08/31 19:00:41 by lfantine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	check_exist(char **map);
+int	check_exist(char **map, int i);
 int	check_line(char **map);
 int	check_valid(char **map);
 int	check_char(char **map, int idxl, int idxc);
@@ -20,7 +20,7 @@ int	check_global(char **map)
 	int	error;
 
 	error = 0;
-	if (check_exist(map) == 1)
+	if (check_exist(map, 1) == 1)
 		return (1);
 	else if (check_line(map) == 1)
 		return (1);
@@ -31,11 +31,22 @@ int	check_global(char **map)
 	return (0);
 }
 
-int	check_exist(char **map)
+int	check_exist(char **map, int i)
 {
+	int	nb;
+
+	nb = ft_atoi(map[0]);
+	while (nb > 9)
+	{
+		nb /= 10;
+		i++;
+	}
+	if (ft_strlen(map[0]) < 4 || ft_strlen(map[0]) > (3 + i))
+		return (1);
 	if (ft_strlen_bis(map) > 1)
 	{
-		if (map[1][0] != '\0' && (map[1][0] >= 32 && map[1][0] <= 126))
+		if ((map[1][0] != '\0')
+				&& (map[1][0] >= 32 && map[1][0] <= 126))
 			return (0);
 	}
 	return (1);
