@@ -4,14 +4,55 @@ char **open_read_close(int bsize, char **argv, int i)
 	int	ret;
 	char **map;
 	char buf[bsize + 1];
+	int	j;
+	char	firstline[10];
 
 	map = NULL;
 	if (i == 0)
 	{
-		while (read(0, buf, bsize))
+		j = 0;
+		read(0, buf, bsize);
+		while (buf[j] && buf[j] != '\n')
 		{
-			write(1, &buf, ft_strlen(buf));
-			buf[0] = '\0';
+			firstline[j] = buf[j];
+			j++;
+		}
+		firstline[j] = '\0';
+		j = 0;
+		if (ft_atoi(firstline) == 0)
+			return (0);
+		map = malloc(sizeof(char *) * (ft_atoi(firstline) + 3));
+		if (!map)
+			return (0);
+		map[0] = malloc(sizeof(char) * ft_strlen(firstline) + 1);
+		if (!map[0])
+			return (0);
+		map[0][0] = '\0';
+		while (firstline[j])
+		{
+			map[0][j] = firstline[j];
+			j++;
+		}
+		map[0][j] = '\0';
+		j = 1;
+		while (j <= ft_atoi(map[0]))
+		{
+			i = 0;
+			read(0, buf, bsize);
+			while (buf[i] && buf[i] != '\n')
+				i++;
+			map[j] = malloc(sizeof(char) * (i + 1));
+			if (!map[j])
+				return (0);
+			map[j][0] = '\0';
+			i = 0;
+			while (buf[i] && buf[i] != '\n')
+			{
+				map[j][i] = buf[i];
+				i++;
+			}
+			map[j][i] = '\0';
+			j++;
 		}
 	}
 	else

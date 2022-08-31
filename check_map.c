@@ -6,7 +6,7 @@
 /*   By: lfantine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 09:34:34 by lfantine          #+#    #+#             */
-/*   Updated: 2022/08/31 14:03:25 by lfantine         ###   ########.fr       */
+/*   Updated: 2022/08/31 17:15:44 by lfantine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ int	check_global(char **map)
 
 	error = 0;
 	if (check_exist(map) == 1)
-		return (-1);
+		return (1);
 	else if (check_line(map) == 1)
-		return (-2);
+		return (1);
 	else if (check_valid(map) == 1)
-		return (-3);
+		return (1);
 	else if (check_char(map, 0, 1) == 1)
-		return (4);
+		return (1);
 	return (0);
 }
 

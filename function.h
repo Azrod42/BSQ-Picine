@@ -6,7 +6,7 @@
 /*   By: tsorabel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 08:59:59 by tsorabel          #+#    #+#             */
-/*   Updated: 2022/08/30 18:31:52 by tsorabel         ###   ########.fr       */
+/*   Updated: 2022/08/31 18:09:12 by lfantine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ typedef struct s_max_sqr
 # include<stdlib.h>
 # include"ft_strlen.c"
 # include"ft_split.c"
-# include"open_read.c"
 # include"ft_atoi.c"
+# include"open_read.c"
 # include"ft_strlen_bis.c"
 # include"check_map.c"
 # include"check_tab.c"
