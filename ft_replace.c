@@ -6,7 +6,7 @@
 /*   By: tsorabel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 17:48:33 by tsorabel          #+#    #+#             */
-/*   Updated: 2022/08/30 20:38:22 by lfantine         ###   ########.fr       */
+/*   Updated: 2022/08/31 13:23:04 by lfantine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int replace_tab(s_max_sqr *pos, char **map)
 	lgt = 1;
 	while (lgt < atoi(map[0]))
 	{	
-		while (k < lgt && k < pos->lgt)
+		while (k <= lgt && k < pos->lgt)
 		{
-			while (j < lgt && j < pos->lgt)
+			while (j <= lgt && j < pos->lgt)
 			{
 				map[i+k][pos->x + j] = map[0][ft_strlen(map[0]) - 1];
 				j++;
