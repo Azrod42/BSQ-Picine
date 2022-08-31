@@ -9,7 +9,7 @@ void	set_max_sqr(s_max_sqr *sqr, int lgt, s_pos pos, char *c)
 s_max_sqr	ft_loop_sq(char **map)
 {
 	s_pos		pos;
-	s_max_sqr 	sqr;
+	s_max_sqr	sqr;
 	int			lenfind;
 	int			len;
 
@@ -35,6 +35,5 @@ s_max_sqr	ft_loop_sq(char **map)
 		pos.x = 0;
 		pos.y++;
 	}
-	
 	return (sqr);
 }

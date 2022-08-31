@@ -6,11 +6,11 @@
 #    By: lfantine <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/28 20:02:48 by lfantine          #+#    #+#              #
-#    Updated: 2022/08/30 18:50:27 by lfantine         ###   ########.fr        #
+#    Updated: 2022/08/31 14:44:04 by lfantine         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= ft_display_file
+NAME	= bsq
 
 SCRS	=	main.c
 

@@ -37,6 +37,8 @@ typedef struct s_max_sqr
 # include"ft_strlen.c"
 # include"ft_split.c"
 # include"open_read.c"
+# include"ft_atoi.c"
+# include"ft_strlen_bis.c"
 # include"check_map.c"
 # include"check_tab.c"
 # include"ft_loop_sq.c"
