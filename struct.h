@@ -13,7 +13,7 @@
 #ifndef STRUCT_H
 # define STRUCT_H
 
-# define BUF_SIZE 5000000
+# define BUF_SIZE 524288
 
 typedef struct s_pos
 {
