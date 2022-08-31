@@ -6,16 +6,16 @@
 /*   By: tsorabel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 23:00:39 by tsorabel          #+#    #+#             */
-/*   Updated: 2022/08/31 19:24:29 by lfantine         ###   ########.fr       */
+/*   Updated: 2022/08/31 20:09:38 by lfantine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"function.h"
 
-void ft_free(char **map)
+void	ft_free(char **map)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	while (i < ft_strlen_bis(map) + 1)
 	{
@@ -29,7 +29,7 @@ void	make(char **map, int i, s_max_sqr posmax, char **argv)
 {
 	s_pos		pos;
 	s_max_sqr	sqr;
-	int 		lenfind;
+	int			lenfind;
 
 	pos.x = 0;
 	pos.y = 1;
@@ -55,10 +55,10 @@ void	make(char **map, int i, s_max_sqr posmax, char **argv)
 
 int	main(int argc, char **argv)
 {
-	char **map;
-	int	i;
-	s_max_sqr posmax;
-	
+	char		**map;
+	int			i;
+	s_max_sqr	posmax;
+
 	map = NULL;
 	posmax.lgt = 0;
 	if (argc < 2)
@@ -74,6 +74,5 @@ int	main(int argc, char **argv)
 				write(1, "\n", 1);
 		}
 	}
-	//system( "leaks bsq");
 	return (0);
 }
