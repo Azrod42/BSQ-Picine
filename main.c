@@ -6,11 +6,24 @@
 /*   By: tsorabel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 23:00:39 by tsorabel          #+#    #+#             */
-/*   Updated: 2022/08/31 13:24:44 by lfantine         ###   ########.fr       */
+/*   Updated: 2022/08/31 14:31:24 by tsorabel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"function.h"
+
+void ft_free(char **map)
+{
+	int i;
+	
+	i = 0;
+	while (i < ft_strlen_bis(map) + 1)
+	{
+		free(map[i]);
+		i++;
+	}
+	free(map);
+}
 
 void	make(char **map, int i, s_max_sqr posmax, char **argv)
 {
@@ -18,14 +31,15 @@ void	make(char **map, int i, s_max_sqr posmax, char **argv)
 	if (check_global(map) == 1)
 	{
 		write(1, "map error\n", 10);
+		//ft_free(map);
 		return ;
 	}
 	posmax = ft_loop_sq(map);
-	printf("%d = x, %d = y, %d = len\n", posmax.x, posmax.y, posmax.lgt);
+//	printf("%d = x, %d = y, %d = len\n", posmax.x, posmax.y, posmax.lgt);
 	replace_tab(&posmax, map);
 	print(map);
-	free(map);
-}
+	ft_free(map);
+	}
 
 int	main(int argc, char **argv)
 {
@@ -52,5 +66,6 @@ int	main(int argc, char **argv)
 			}
 		}
 	}
+	system( "leaks a.out");
 	return (0);
 }
