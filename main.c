@@ -6,7 +6,7 @@
 /*   By: tsorabel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 23:00:39 by tsorabel          #+#    #+#             */
-/*   Updated: 2022/08/31 18:16:24 by lfantine         ###   ########.fr       */
+/*   Updated: 2022/08/31 19:06:26 by tsorabel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,14 @@ void ft_free(char **map)
 
 void	make(char **map, int i, s_max_sqr posmax, char **argv)
 {
+	s_pos		pos;
+	s_max_sqr	sqr;
+	int 		lenfind;
+
+	pos.x = 0;
+	pos.y = 1;
+	sqr.lgt = 0;
+	lenfind = 0;
 	map = open_read_close(BUF_SIZE, argv, i);
 	if (map == 0)
 	{
@@ -39,8 +47,7 @@ void	make(char **map, int i, s_max_sqr posmax, char **argv)
 		ft_free(map);
 		return ;
 	}
-	posmax = ft_loop_sq(map);
-//	printf("%d = x, %d = y, %d = len\n", posmax.x, posmax.y, posmax.lgt);
+	posmax = ft_loop_sq(map, &pos, &lenfind, &sqr);
 	replace_tab(&posmax, map);
 	print(map);
 	ft_free(map);
