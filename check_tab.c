@@ -6,11 +6,11 @@
 /*   By: lfantine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 14:03:39 by lfantine          #+#    #+#             */
-/*   Updated: 2022/08/31 14:03:40 by lfantine         ###   ########.fr       */
+/*   Updated: 2022/08/31 20:28:05 by tsorabel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	check_sqr(s_pos pos, int len, char **map)
+int	check_sqr(t_pos pos, int len, char **map)
 {
 	int		ic;
 	int		il;

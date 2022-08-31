@@ -6,11 +6,9 @@
 /*   By: tsorabel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 23:00:39 by tsorabel          #+#    #+#             */
-/*   Updated: 2022/08/31 20:09:38 by lfantine         ###   ########.fr       */
+/*   Updated: 2022/08/31 20:36:24 by tsorabel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include"function.h"
 
 void	ft_free(char **map)
 {
@@ -25,10 +23,10 @@ void	ft_free(char **map)
 	free(map);
 }
 
-void	make(char **map, int i, s_max_sqr posmax, char **argv)
+void	make(char **map, int i, t_max_sqr posmax, char **argv)
 {
-	s_pos		pos;
-	s_max_sqr	sqr;
+	t_pos		pos;
+	t_max_sqr	sqr;
 	int			lenfind;
 
 	pos.x = 0;
@@ -57,7 +55,7 @@ int	main(int argc, char **argv)
 {
 	char		**map;
 	int			i;
-	s_max_sqr	posmax;
+	t_max_sqr	posmax;
 
 	map = NULL;
 	posmax.lgt = 0;

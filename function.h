@@ -6,34 +6,19 @@
 /*   By: tsorabel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 08:59:59 by tsorabel          #+#    #+#             */
-/*   Updated: 2022/08/31 18:09:12 by lfantine         ###   ########.fr       */
+/*   Updated: 2022/08/31 20:35:55 by tsorabel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #ifndef FUNCTION_H
 # define FUNCTION_H
-
-typedef struct s_pos
-{
-	int x;
-	int y;
-}s_pos;
-
-typedef struct s_max_sqr
-{
-	int x;
-	int y;
-	int lgt;
-	char *start;
-}s_max_sqr;
 
 # include<sys/types.h>
 # include<sys/stat.h>
 # include<fcntl.h>
 # include<unistd.h>
-# include<stdio.h>
 # include<stdlib.h>
+# include"struct.h"
 # include"ft_strlen.c"
 # include"ft_split.c"
 # include"ft_atoi.c"
@@ -45,16 +30,13 @@ typedef struct s_max_sqr
 # include"ft_replace.c"
 # include"print.c"
 
-# define BUF_SIZE 200000
-
-
 char		**ft_split(char *str, char *charset);
 int			ft_strlen(char *str);
 char		**open_read_close(char **argv, int i);
-int     	check_global(char **map);
-int			check_sqr(s_pos pos, int len, char ** map);
-s_max_sqr	ft_loop_sqr(char **map);
-int			replace_tab(s_max_sqr *pos, char **map);
-void		print(char** map);
+int			check_global(char **map);
+int			check_sqr(t_pos pos, int len, char **map);
+t_max_sqr	ft_loop_sqr(char **map);
+int			replace_tab(t_max_sqr *pos, char **map);
+void		print(char **map);
 
 #endif

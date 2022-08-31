@@ -6,11 +6,11 @@
 /*   By: tsorabel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 17:48:33 by tsorabel          #+#    #+#             */
-/*   Updated: 2022/08/31 19:17:58 by tsorabel         ###   ########.fr       */
+/*   Updated: 2022/08/31 20:29:39 by tsorabel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	replace_tab(s_max_sqr *pos, char **map)
+int	replace_tab(t_max_sqr *pos, char **map)
 {
 	int	i;
 	int	j;

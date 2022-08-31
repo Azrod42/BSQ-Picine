@@ -6,11 +6,11 @@
 /*   By: tsorabel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 19:09:28 by tsorabel          #+#    #+#             */
-/*   Updated: 2022/08/31 19:12:08 by tsorabel         ###   ########.fr       */
+/*   Updated: 2022/08/31 20:29:28 by tsorabel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	set_max_sqr(s_max_sqr *sqr, int lgt, s_pos pos, char *c)
+void	set_max_sqr(t_max_sqr *sqr, int lgt, t_pos pos, char *c)
 {
 	sqr->x = pos.x;
 	sqr->y = pos.y;
@@ -18,7 +18,7 @@ void	set_max_sqr(s_max_sqr *sqr, int lgt, s_pos pos, char *c)
 	sqr->start = c;
 }
 
-s_max_sqr	ft_loop_sq(char **map, s_pos *pos, int *lenfind, s_max_sqr *sqr)
+t_max_sqr	ft_loop_sq(char **map, t_pos *pos, int *lenfind, t_max_sqr *sqr)
 {
 	int			len;
 
