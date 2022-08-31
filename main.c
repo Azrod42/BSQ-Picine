@@ -6,7 +6,7 @@
 /*   By: tsorabel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 23:00:39 by tsorabel          #+#    #+#             */
-/*   Updated: 2022/08/31 13:20:27 by lfantine         ###   ########.fr       */
+/*   Updated: 2022/08/31 13:24:44 by lfantine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ void	make(char **map, int i, s_max_sqr posmax, char **argv)
 		write(1, "map error\n", 10);
 		return ;
 	}
-	/*if (check_empty == 1)
-		return(0);*/
 	posmax = ft_loop_sq(map);
 	printf("%d = x, %d = y, %d = len\n", posmax.x, posmax.y, posmax.lgt);
 	replace_tab(&posmax, map);
