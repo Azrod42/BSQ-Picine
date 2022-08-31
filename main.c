@@ -6,23 +6,19 @@
 /*   By: tsorabel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 23:00:39 by tsorabel          #+#    #+#             */
-/*   Updated: 2022/08/30 20:49:42 by lfantine         ###   ########.fr       */
+/*   Updated: 2022/08/31 13:20:27 by lfantine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"function.h"
 
-int	main(int argc, char **argv)
+void	make(char **map, int i, s_max_sqr posmax, char **argv)
 {
-	(void)argc;
-	char **map;
-	
-	s_max_sqr posmax;
-	map = open_read_close(BUF_SIZE, argv);
+	map = open_read_close(BUF_SIZE, argv, i);
 	if (check_global(map) == 1)
 	{
 		write(1, "map error\n", 10);
-		return (1);
+		return ;
 	}
 	/*if (check_empty == 1)
 		return(0);*/
@@ -30,5 +26,33 @@ int	main(int argc, char **argv)
 	printf("%d = x, %d = y, %d = len\n", posmax.x, posmax.y, posmax.lgt);
 	replace_tab(&posmax, map);
 	print(map);
+	free(map);
+}
+
+int	main(int argc, char **argv)
+{
+	char **map;
+	int	i;
+	s_max_sqr posmax;
+	
+	map = NULL;
+	posmax.lgt = 0;
+	if (argc < 2)
+	{
+		make(map, 0, posmax, argv);
+	}
+	else
+	{
+		i = 1;
+		while (argv[i])
+		{
+			make(map, i, posmax, argv);
+			i++;
+			if (argv[i])
+			{
+				write(1, "\n", 1);
+			}
+		}
+	}
 	return (0);
 }
