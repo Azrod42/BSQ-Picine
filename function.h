@@ -45,7 +45,7 @@ typedef struct s_max_sqr
 # include"ft_replace.c"
 # include"print.c"
 
-# define BUF_SIZE 4096
+# define BUF_SIZE 200000
 
 
 char		**ft_split(char *str, char *charset);
