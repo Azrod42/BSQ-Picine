@@ -6,7 +6,7 @@
 /*   By: tsorabel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 23:00:39 by tsorabel          #+#    #+#             */
-/*   Updated: 2022/08/31 19:06:26 by tsorabel         ###   ########.fr       */
+/*   Updated: 2022/08/31 19:24:29 by lfantine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	make(char **map, int i, s_max_sqr posmax, char **argv)
 	pos.y = 1;
 	sqr.lgt = 0;
 	lenfind = 0;
-	map = open_read_close(BUF_SIZE, argv, i);
+	map = open_read_close(argv, i);
 	if (map == 0)
 	{
 		write(1, "map error\n", 10);

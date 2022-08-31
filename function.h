@@ -50,7 +50,7 @@ typedef struct s_max_sqr
 
 char		**ft_split(char *str, char *charset);
 int			ft_strlen(char *str);
-char		**open_read_close(int bsize, char **argv, int i);
+char		**open_read_close(char **argv, int i);
 int     	check_global(char **map);
 int			check_sqr(s_pos pos, int len, char ** map);
 s_max_sqr	ft_loop_sqr(char **map);
